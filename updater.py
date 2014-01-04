@@ -22,20 +22,35 @@ def loadData():
 def writeClientExecutable():
     extraMods=''
     for mod in savedData['modlist'].split(','):
-        extraMods+='--mod='+mod.split(':')[0]+' '
+        extraMods+='--mod='+mod.strip().split(':')[0]+' '
     if sys.platform.startswith('win32'):
         batch = open('Client.bat', 'w')
         batch.write('cd acr\nbin_win32\\ac_client.exe --home=data --mod=acr '+extraMods+'--init %*')
         batch.close()
     elif sys.platform.startswith('linux'):
         shell = open('Client.sh', 'w')
-        shell.write('#!/bin/sh\nCUBE_DIR=$(dirname "$(readlink -f $0)/acr")\nCUBE_OPTIONS="--home=data --init --mod=acr '+extraMods+'"\ncd "${CUBE_DIR}"\nexec "${CUBE_DIR}/bin_linux/native_client" ${CUBE_OPTIONS} "$@"')
+        shell.write('#!/bin/sh\ncd acr\nCUBE_DIR=$(dirname "$(readlink -f $0)/acr")\nCUBE_OPTIONS="--home=data --init --mod=acr '+extraMods+'"\ncd "${CUBE_DIR}"\nexec "${CUBE_DIR}/bin_linux/linux_client" ${CUBE_OPTIONS} "$@"')
         shell.close()
     else:
         print("You have to supply your own bat/sh type file. I don't know how to write one for your system")
+        return
     print("Wrote Client Launcher")
 
 def writeServerExecutable():
+   extraMods=''
+    for mod in savedData['modlist'].split(','):
+        extraMods+='--mod='+mod.split(':')[0]+' '
+    if sys.platform.startswith('win32'):
+        batch = open('Server.bat', 'w')
+        batch.write('cd acr\nbin_win32\\ac_server.exe --mod=acr '+extraMods+'-Cconfig/servercmdline.txt %*\npause')
+        batch.close()
+    elif sys.platform.startswith('linux'):
+        shell = open('Server.sh', 'w')
+        shell.write('#!/bin/sh\ncd acr\nCUBE_DIR=$(dirname "$(readlink -f $0)")\nCUBE_OPTIONS="--mod=acr '+extraMods+'"\nCUBE_OPTIONFILE=-Cconfig/servercmdline.txt\ncd "${CUBE_DIR}"\nexec "${CUBE_DIR}/bin_linux/linux_server" ${CUBE_OPTIONS} ${CUBE_OPTIONFILE} "$@"')
+        shell.close()
+    else:
+        print("You have to supply your own bat/sh type file. I don't know how to write one for your system")
+        return
     print("Wrote Server Launcher")
 
 def init(arguments):
@@ -174,10 +189,22 @@ def installLocalMod(arguments):
     
 
 def runClient(arguments):
-    pass
+    writeClientExecutable()
+    if sys.platform.startswith('win32'):
+        subprocess.call('Client.bat', shell=True)
+    elif sys.platform.startswith('linux'):
+        subprocess.call('Client.sh', shell=True)
+    else:
+        print("I don't recognize your OS")
 
 def runServer(arguments):
-    pass
+    writeServerExecutable()
+    if sys.platform.startswith('win32'):
+        subprocess.call('Server.bat', shell=True)
+    elif sys.platform.startswith('linux'):
+        subprocess.call('Server.sh', shell=True)
+    else:
+        print("I don't recognize your OS")
 
 def help(arguments):
     if arguments != None:
