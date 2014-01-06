@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys
 import os
 import urllib
@@ -250,6 +251,9 @@ def installLocalMod(arguments):
 		elif cont.lower() == 'y':
 			print('Removing old install')
 			shutil.rmtree(os.path.join(os.getcwd(), 'acr/mods/'+name))
+		else:
+			print('Unrecognized command. Exiting')
+			return
 	print("Extracting "+name)
 	mod = zipfile.ZipFile(os.path.join(os.getcwd(),arguments[2]))
 	mod.extractall(os.path.join(os.getcwd(),sanitizePath('acr/mods/'+name)))
@@ -261,8 +265,28 @@ def installLocalMod(arguments):
 	writeClientExecutable()
 	writeServerExecutable()
 	print(name+" finished being installed")
-	
 
+def removeMods(arguments):
+	if len(arguments) < 3:
+		help('updater.py','help','removemods')
+		return
+	for mod in arguments[2:]:
+		cont = input("Are you sure you want to remove "+mod+"? (y/n)")
+		if cont.lower() == 'n':
+			print(mod+' was not removed')
+			return
+		elif cont.lower() == 'y':
+			print("Removing "+mod)
+			shutil.rmtree(os.path.join(os.getcwd(),sanitizePath('acr/mods/'+mod)))
+			pruneMod(mod)
+			init(' ')
+			writeClientExecutable()
+			writeServerExecutable()
+			print("Done removing "+mod)
+		else:
+			print("Unrecognised command. Exiting")
+			return
+			
 def runClient(arguments):
 	writeClientExecutable()
 	if sys.platform.startswith('win32'):
@@ -285,31 +309,35 @@ def help(arguments):
 	if len(arguments) > 2:
 		print("Eek no implementations")
 	else:
-		print("You need to specify an option for the updater")
+		print("You need to specify a valid option for the updater")
 		print("Available options are:")
 		print("init - Initiates the updater configs")
 		print("updateall - Checks everything for updates")
 		print("updateme - update the updater")
 		print("updateacr - Checks for updates to ACR")
 		print("updatemods - Check for mod updates")
-		print("installmods <name>,<mod2>... - Comma seperated list of mods to install")
+		print("installmods <mod1>, <mod2>... - Comma separated list of mods to install")
 		print("listmods - Gets the mod list from the server with versions")
 		print("installlocalmod <file> - installs a zipfile as a mod")
+		print("removemods <mod1>, <mod2>... - Comma separated list of mods to remove")
 		print("runclient - runs the client")
 		print("runserver - runs the server")
-		print("help <option> - Explains how to use <option> or if excluded gives you this dialog")
+		print("help <option> - Explains how to use <option> or if excluded gives you this dialogue")
 	return
 
-runOption = {'init' : init, 'updateall' : updateAll, 'updateme' : updateMe, 'updateacr' : updateACR, 'updatemods' : updateMods, 'installmods' : installMods, 'listmods' : listMods, 'installlocalmod' : installLocalMod, 'runclient' : runClient, 'runserver' : runServer, 'help' : help}
+runOption = {'init' : init, 'updateall' : updateAll, 'updateme' : updateMe, 'updateacr' : updateACR, 'updatemods' : updateMods, 'installmods' : installMods, 'listmods' : listMods, 'installlocalmod' : installLocalMod, 'removemods' : removeMods, 'runclient' : runClient, 'runserver' : runServer, 'help' : help}
 
 def main():
 	arguments = sys.argv
 	if len(arguments) < 2:
-		help(None)
+		help('')
 	else:
 		if arguments[1] != 'init':
 			loadData()
-		runOption[sys.argv[1]](sys.argv)
+		try:
+			runOption[sys.argv[1]](sys.argv)
+		except KeyError:
+			help('')
 	
 if __name__ == "__main__":
 	main()
