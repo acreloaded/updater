@@ -93,6 +93,7 @@ def updateAll(arguments):
 
 def updateMe(arguments):
 	print("Checking for updates to me")
+	print("I no know how to update me")
 	#implement later
 
 def updateACR(arguments):
@@ -129,13 +130,13 @@ def updateACR(arguments):
 				else:
 					print('Backing up Files')
 					distutils.dir_util.mkpath(os.path.join(os.getcwd(),'backup'))
-					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'acr\\configs'), os.path.join(os.getcwd(),'backup\\configs'))
+					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'acr\\config'), os.path.join(os.getcwd(),'backup\\config'))
 					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'acr\\data'), os.path.join(os.getcwd(),'backup\\data'))
 					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'acr\\mods'), os.path.join(os.getcwd(),'backup\\mods'))
 					shutil.rmtree(os.path.join(os.getcwd(), 'acr'))
 					print('Moving Files')
 					os.rename('tmp','acr')
-					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'backup\\configs'), os.path.join(os.getcwd(),'acr\\configs'))
+					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'backup\\config'), os.path.join(os.getcwd(),'acr\\config'))
 					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'backup\\data'), os.path.join(os.getcwd(),'acr\\data'))
 					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'backup\\mods'), os.path.join(os.getcwd(),'acr\\mods'))
 					shutil.rmtree(os.path.join(os.getcwd(), 'backup'))
@@ -156,13 +157,13 @@ def updateACR(arguments):
 				else:
 					print('Backing up Files')
 					distutils.dir_util.mkpath(os.path.join(os.getcwd(),'backup'))
-					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'acr/configs'), os.path.join(os.getcwd(),'backup/configs'))
+					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'acr/config'), os.path.join(os.getcwd(),'backup/config'))
 					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'acr/data'), os.path.join(os.getcwd(),'backup/data'))
 					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'acr/mods'), os.path.join(os.getcwd(),'backup/mods'))
 					shutil.rmtree(os.path.join(os.getcwd(), 'acr'))
 					print('Moving Files')
 					os.rename('tmp','acr')
-					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'backup/configs'), os.path.join(os.getcwd(),'acr/configs'))
+					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'backup/config'), os.path.join(os.getcwd(),'acr/config'))
 					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'backup/data'), os.path.join(os.getcwd(),'acr/data'))
 					distutils.dir_util.copy_tree(os.path.join(os.getcwd(),'backup/mods'), os.path.join(os.getcwd(),'acr/mods'))
 					shutil.rmtree(os.path.join(os.getcwd(), 'backup'))
