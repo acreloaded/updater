@@ -212,15 +212,14 @@ def installMods(arguments):
 				shutil.rmtree(os.path.join(os.getcwd(), 'acr/mods/'+mod.split('-')[0]))
 				pruneMod(mod.split('-')[0])
 			else:
-				print("Assuming you said no since you didn't give a valid option")
-				print(mod+' was not installed')
+				print('Unrecognized command. Exiting')
 				return
 		shutil.move(os.path.join(os.getcwd(), mod), os.path.join(os.getcwd(),'acr/mods/'+mod.split('-')[0]))
 		if savedData['modlist'] != '':
 			savedData['modlist'] += ', '
 		savedData['modlist'] += mod
 		if mod.find('-') == -1:
-			savedData['modlist'] += ':0'
+			savedData['modlist'] += '-0'
 		print('Succesfully installed '+mod)
 	init(' ')
 	writeClientExecutable()
@@ -228,9 +227,10 @@ def installMods(arguments):
 
 def listMods(arguments):
 	modList = urllib.request.urlopen(savedData['modserverurl']+'/list.py')
-	data = str(modList.read(), encoding='utf8')
-	print(data)
-	#implement later
+	data = str(modList.read(), encoding='utf8').strip()
+	for line in data.split('\n'):
+		if line.strip() != '':
+			print(line.strip().split('-')[0])
 
 def installLocalMod(arguments):
 	if len(arguments) < 3:
@@ -286,6 +286,10 @@ def removeMods(arguments):
 		else:
 			print("Unrecognised command. Exiting")
 			return
+
+def installedMods(arguments):
+	for mod in savedData['modlist'].split(', '):
+		print(mod.split('-')[0]+' version '+mod.split('-')[1])
 			
 def runClient(arguments):
 	writeClientExecutable()
@@ -320,12 +324,13 @@ def help(arguments):
 		print("listmods - Gets the mod list from the server with versions")
 		print("installlocalmod <file> - installs a zipfile as a mod")
 		print("removemods <mod1>, <mod2>... - Comma separated list of mods to remove")
+		print("installedmods - Prints out the installed mods along with versions")
 		print("runclient - runs the client")
 		print("runserver - runs the server")
 		print("help <option> - Explains how to use <option> or if excluded gives you this dialogue")
 	return
 
-runOption = {'init' : init, 'updateall' : updateAll, 'updateme' : updateMe, 'updateacr' : updateACR, 'updatemods' : updateMods, 'installmods' : installMods, 'listmods' : listMods, 'installlocalmod' : installLocalMod, 'removemods' : removeMods, 'runclient' : runClient, 'runserver' : runServer, 'help' : help}
+runOption = {'init' : init, 'updateall' : updateAll, 'updateme' : updateMe, 'updateacr' : updateACR, 'updatemods' : updateMods, 'installmods' : installMods, 'listmods' : listMods, 'installlocalmod' : installLocalMod, 'removemods' : removeMods, 'installedmods' : installedMods, 'runclient' : runClient, 'runserver' : runServer, 'help' : help}
 
 def main():
 	arguments = sys.argv
