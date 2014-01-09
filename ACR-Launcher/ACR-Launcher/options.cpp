@@ -14,3 +14,8 @@ Options::~Options()
 {
     delete ui;
 }
+
+void Options::on_Close_clicked()
+{
+   Options::hide();
+}

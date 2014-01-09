@@ -35,7 +35,9 @@ public:
     {
         if (Launcher->objectName().isEmpty())
             Launcher->setObjectName(QStringLiteral("Launcher"));
-        Launcher->resize(323, 285);
+        Launcher->resize(323, 250);
+        Launcher->setMinimumSize(QSize(323, 250));
+        Launcher->setMaximumSize(QSize(323, 250));
         Launcher->setContextMenuPolicy(Qt::NoContextMenu);
         QIcon icon;
         icon.addFile(QStringLiteral(":/Images/Resources/icon.ico"), QSize(), QIcon::Normal, QIcon::Off);
@@ -58,7 +60,7 @@ public:
         Options->setGeometry(QRect(140, 170, 51, 21));
         news = new QLabel(centralWidget);
         news->setObjectName(QStringLiteral("news"));
-        news->setGeometry(QRect(10, 240, 46, 13));
+        news->setGeometry(QRect(10, 210, 46, 13));
         Launcher->setCentralWidget(centralWidget);
 
         retranslateUi(Launcher);

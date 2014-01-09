@@ -15,6 +15,9 @@ public:
     explicit Options(QWidget *parent = 0);
     ~Options();
 
+private slots:
+    void on_Close_clicked();
+
 private:
     Ui::Options *ui;
 };
