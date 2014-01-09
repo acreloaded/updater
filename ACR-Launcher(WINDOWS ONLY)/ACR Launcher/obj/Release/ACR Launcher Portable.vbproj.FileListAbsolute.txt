@@ -1,0 +1,44 @@
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher.exe.config
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher.exe.manifest
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher.application
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher.exe
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher.pdb
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher.xml
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ZipForge.dll
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Changes.resources
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Extra.resources
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Form1.resources
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Form2.resources
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Resources.resources
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Options.resources
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher Portable.vbproj.GenerateResource.Cache
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.TrustInfo.xml
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.exe.manifest
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.application
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.exe
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.xml
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.pdb
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher Portable.vbprojResolveAssemblyReference.cache
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Name_Changer.resources
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher.exe.config
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.exe
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.xml
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.pdb
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher.exe.manifest
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher.application
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher.exe
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher.pdb
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher.xml
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ZipForge.dll
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher Portable.vbprojResolveAssemblyReference.cache
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Changes.resources
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Extra.resources
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Form1.resources
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Form2.resources
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Resources.resources
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Name_Changer.resources
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR_Launcher.Options.resources
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher Portable.vbproj.GenerateResource.Cache
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.TrustInfo.xml
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.exe.manifest
+D:\Backups\12 4 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.application

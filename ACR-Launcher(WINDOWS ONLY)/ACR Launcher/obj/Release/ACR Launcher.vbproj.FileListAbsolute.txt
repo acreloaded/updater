@@ -1,0 +1,28 @@
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\bin\Release\ACR Launcher.exe.config
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\bin\Release\ACR Launcher.exe
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\bin\Release\ACR Launcher.pdb
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\bin\Release\ACR Launcher.xml
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR_Launcher.Form1.resources
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR_Launcher.Resources.resources
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR Launcher.vbproj.GenerateResource.Cache
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR Launcher.exe
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR Launcher.xml
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR Launcher.pdb
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\Interop.Shell32.dll
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR Launcher.vbproj.ResolveComReference.cache
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR_Launcher.Extra.resources
+C:\Users\Tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR_Launcher.Form2.resources
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR_Launcher.Options.resources
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR_Launcher.Changes.resources
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher\ACR Launcher\bin\Release\ACR Launcher.exe.manifest
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher\ACR Launcher\bin\Release\ACR Launcher.application
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR Launcher.TrustInfo.xml
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR Launcher.exe.manifest
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Release\ACR Launcher.application
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher.exe.config
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\Interop.Shell32.dll
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.vbproj.ResolveComReference.cache
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.exe
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.xml
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\obj\Release\ACR Launcher.pdb
+C:\Users\Tristen\Documents\Visual Studio 2012\Projects\ACR Launcher Portable\ACR Launcher\bin\Release\ACR Launcher Portable.exe.config

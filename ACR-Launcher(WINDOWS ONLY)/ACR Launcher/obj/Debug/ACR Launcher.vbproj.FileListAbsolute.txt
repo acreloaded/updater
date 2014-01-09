@@ -1,0 +1,12 @@
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\bin\Debug\ACR Launcher.exe.config
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\bin\Debug\ACR Launcher.exe
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\bin\Debug\ACR Launcher.pdb
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\bin\Debug\ACR Launcher.xml
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\bin\Debug\ZipForge.dll
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Debug\ACR Launcher.vbprojResolveAssemblyReference.cache
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Debug\ACR_Launcher.Form1.resources
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Debug\ACR_Launcher.Resources.resources
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Debug\ACR Launcher.vbproj.GenerateResource.Cache
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Debug\ACR Launcher.exe
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Debug\ACR Launcher.xml
+c:\users\tristen\documents\visual studio 2012\Projects\ACR Launcher\ACR Launcher\obj\Debug\ACR Launcher.pdb
