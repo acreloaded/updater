@@ -1,7 +1,5 @@
-AssaultCube Reloaded Updater
+AssaultCube Reloaded Launcher
 =====
-This is the official AssaultCube Reloaded updater.
+This is the official auto-updater launcher for AssaultCube Reloaded.
 
-It can check for updates when you launch ACR.
-
-It can also download or update AssaultCube Reloaded for you.
+It can check for updates when you launch ACR. You can also launch it in an interactive mode, with which you can download or update AssaultCube Reloaded.
