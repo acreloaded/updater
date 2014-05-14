@@ -53,9 +53,24 @@ def writeClientExecutable():
 		batch.write('cd acr\nbin_win32\\ac_client.exe --home=data '+extraMods+'--mod=acr --init %*')
 		batch.close()
 	elif sys.platform.startswith('linux'):
+		#ugly but works :P -- rXn
+		origFile = open('acr/client.sh', 'r')
 		shell = open('Client.sh', 'w')
-		shell.write('#!/bin/sh\ncd acr\nCUBE_DIR=$(dirname "$(readlink -f $0)/acr")\nCUBE_OPTIONS="--home=data '+extraMods+'--mod=acr --init"\ncd "${CUBE_DIR}"\nexec "${CUBE_DIR}/bin_linux/linux_client" ${CUBE_OPTIONS} "$@"')
-		shell.close()
+		origFileLine = origFile.readline()
+		shell.write(origFileLine)
+		shell.write('cd acr/\n')
+		origFileLine = origFile.readline()
+		while origFileLine.find('CUBE_OPTIONS') == -1:
+		    shell.write(origFileLine)
+		    origFileLine = origFile.readline()
+		#now skip and replace the "bad" line:
+		shell.write('CUBE_OPTIONS="--home=data '+extraMods+'--mod=acr --init"\n')
+		origFileLine = origFile.readline()
+		origFileLine = origFile.readline()
+		#and write the remaining stuff
+		shell.write(origFile.read())
+		#shell.write('/bin/sh\ncd acr\nCUBE_DIR=$(dirname "$(readlink -f .)/acr")\nCUBE_OPTIONS="--home=data '+extraMods+'--mod=acr --init"\ncd "${CUBE_DIR}"\nexec "${CUBE_DIR}/bin_linux/linux_client" ${CUBE_OPTIONS} "$@"')
+		shell.close() 
 	else:
 		print("You have to supply your own bat/sh type file. I don't know how to write one for your system")
 		return
