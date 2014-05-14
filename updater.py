@@ -56,6 +56,7 @@ def writeClientExecutable():
 		#ugly but works :P -- rXn
 		origFile = open('acr/client.sh', 'r')
 		shell = open('Client.sh', 'w')
+		#first cd to acr
 		origFileLine = origFile.readline()
 		shell.write(origFileLine)
 		shell.write('cd acr/\n')
