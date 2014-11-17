@@ -1,9 +1,6 @@
 updater-qt
 ==========
 
-My (next ;) try for an updater an mod system, this time porting ruler501's python script to C++/Qt
+My (next ;) try for an updater an mod system, this time mainly porting ruler501's python script to C++/Qt
 
-Ignore the directory, it contains a preview with a gui I suggested once, but is not really functional for now.
-
-The other two files are my partly ported updater logic. I stayed quite close to the original (only dont like foreach{} that much).
-Note the run-/writeClient/-Server functions, they are quite the best part :P
+The GUI looks quite nice now and many of the basic functions are working. I am currently fighting with Qt's network logic.
