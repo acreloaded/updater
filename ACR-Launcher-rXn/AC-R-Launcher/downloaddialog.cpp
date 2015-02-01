@@ -10,16 +10,12 @@ DownloadDialog::DownloadDialog(QString url, QWidget *parent) :
 {
     ui->setupUi(this);
     ui->bBox_Close->setEnabled(false);
-    text = "";
     qna = new QNetworkAccessManager(this);
-    qnreq = new QNetworkRequest(QUrl("file://home/malte/"));
+    qnreq = new QNetworkRequest(QUrl(url));
     qnreply = qna->get(*qnreq);
-    connect(qnreply, SIGNAL(finished(QNetworkReply*)), this, SLOT(handleFinished(QNetworkReply*)));
+    connect(qna, SIGNAL(finished(QNetworkReply*)), this, SLOT(handleFinished(QNetworkReply*)));
+    connect(qnreply, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(handleError(QNetworkReply::NetworkError)));
     connect(qnreply, SIGNAL(downloadProgress(qint64,qint64)), this, SLOT(handleProgress(qint64,qint64)));
-    qDebug() << url;
-    qDebug() << qnreply->isReadable();
-    qDebug() << qnreply->readAll();
-    qDebug() << qnreply->error();
 }
 
 DownloadDialog::~DownloadDialog()
@@ -33,7 +29,6 @@ void DownloadDialog::on_bBox_Close_clicked(QAbstractButton *button)
 }
 
 void DownloadDialog::handleFinished(QNetworkReply *reply) {
-    qDebug("test");
     if(!reply->isReadable()) {
         ui->tBrowser_Download->append("Error downloading the file!");
         return;
@@ -44,9 +39,19 @@ void DownloadDialog::handleFinished(QNetworkReply *reply) {
 }
 
 void DownloadDialog::handleProgress(qint64 rec, qint64 total) {
-    qDebug("progress");
-    text += ".";
-    qDebug() << qnreply->readAll();
-    qDebug() << qnreply->error();
-    ui->tBrowser_Download->setText(text);
+    //Give a nice feedback
+    if(total > 0) {
+        QString percent;
+        percent.setNum(rec/total *100);
+        percent += "%";
+        QString ofTotal;
+        ofTotal.setNum((int)(total/1024));
+        ofTotal.prepend(" of total ");
+        ofTotal.append(" KiB");
+        ui->tBrowser_Download->setText(percent + ofTotal);
+    }
+}
+
+void DownloadDialog::handleError(QNetworkReply::NetworkError error) {
+    ui->tBrowser_Download->append("Error:" + error);
 }

@@ -47,18 +47,18 @@ void MainWorker::parseCmd(QStringList av)
 }
 
 
-//Remove mod from list -DONE
-QString MainWorker::pruneMod(QString badMod) {
-    QString ret_value = "Not found!";
-    QList<QString> newList;
-    for(int i = 0; i < SavedData->getInstalledMods().count(); i++) {
-        if(SavedData->getInstalledMods()[i].compare(badMod.trimmed(), Qt::CaseInsensitive)) {
-            newList.append(SavedData->getInstalledMods()[i]);
-            ret_value = "\"" + badMod + "\"" + " removed!";
-        }
-    }
-    SavedData->setInstalledMods(newList);
-}
+//Remove mod from list -REALLY NECCESSARY?! rXn 01.2015
+//void MainWorker::pruneMod(QString badMod) {
+//    QString ret_value = "Not found!";
+//    QList<ModEntry> newList;
+//    for(int i = 0; i < SavedData->getInstalledMods().count(); i++) {
+//        if(SavedData->getInstalledMods()[i].Name.compare(badMod.trimmed, Qt::CaseInsensitive)) {
+//            newList.append(SavedData->getInstalledMods()[i]);
+//            ret_value = "\"" + badMod + "\"" + " removed!";
+//        }
+//    }
+//    SavedData->setInstalledMods(newList);
+//}
 
 //Get config data and mods -DONE
 QString MainWorker::loadData() {
@@ -95,8 +95,8 @@ void MainWorker::on_modListDownloader_isReady() {
 //TODO return
 QString MainWorker::writeClientExecutable() {
     QString extraMods = "";
-    foreach (QString mod, SavedData->getInstalledMods()) {
-        extraMods += "--mod=mods/" + mod.trimmed().split('-')[0] + " ";
+    foreach (ModEntry mod, SavedData->getInstalledMods()) {
+        extraMods += "--mod=mods/" + mod.Name.trimmed().split('-')[0] + " ";
     }
 #ifdef Q_OS_WIN32
     switch (SavedData->writeClientScript("cd acr\nbin_win32\\ac_client.exe --home=data " + extraMods + "--mod=acr --init %*", 1)) {
@@ -128,8 +128,8 @@ QString MainWorker::writeClientExecutable() {
 
 QString MainWorker::writeServerExecutable() {
     QString extraMods = "";
-    foreach (QString mod, SavedData->getInstalledMods()) {
-        extraMods += "--mod=mods/" + mod.trimmed().split('-')[0] + " ";
+    foreach (ModEntry mod, SavedData->getInstalledMods()) {
+        extraMods += "--mod=mods/" + mod.Name.trimmed().split('-')[0] + " ";
     }
 #ifdef Q_OS_WIN32
     switch (SavedData->writeServerScript("cd acr\nbin_win32\\ac_server.exe --home=data " + extraMods + "--mod=acr --init %*", 1)) {
@@ -204,7 +204,11 @@ QStringList MainWorker::avialableMods() {
 }
 
 QStringList MainWorker::installedMods() {
-    return SavedData->getInstalledMods();
+    QStringList tmp;
+    foreach (ModEntry me, SavedData->getInstalledMods()) {
+        tmp.append(me.toString());
+    }
+    return tmp;
 }
 
 QStringList MainWorker::getModInfos(QString mod) {
@@ -284,8 +288,8 @@ QString MainWorker::installBackup(QString file) {
 
 QString MainWorker::installMod(QString mod) {
     //Check if already installed
-    foreach (QString instMod, SavedData->getInstalledMods()) {
-        if(!instMod.compare(mod)) {
+    foreach (ModEntry instMod, SavedData->getInstalledMods()) {
+        if(!instMod.Name.compare(mod)) {
             return "You already have a version of this mod installed!\nMaybe try an update?";
         }
     }
@@ -299,14 +303,16 @@ QString MainWorker::installMod(QString mod) {
     DownloadDialog dloadDialog(me.Url);
     connect(&dloadDialog, SIGNAL(downloadReady(QByteArray)), this, SLOT(on_DownloadDialog_downloadReady(QByteArray)));
     dloadDialog.exec();
-    return "Downloaded mod \"" + mod +"\"";
+    return "Done processing mod \"" + mod +"\"";
 }
 
 void MainWorker::on_DownloadDialog_downloadReady(QByteArray data) {
-    if(SavedData->installMod(data) != ConfigData::SUCCESS) {
+    int error = SavedData->installMod(data);
+    if(error != ConfigData::SUCCESS) {
         emit installerReady("Error installing mod!");
+    }else {
+        emit installerReady("Mod installed!");
     }
-    emit installerReady("Mod installed!");
 }
 
 

@@ -37,7 +37,7 @@ public:
     QStringList installedMods();
     QStringList avialableMods();
 
-    QString pruneMod(QString badMod);
+    void pruneMod(QString badMod);
 
     //Load stuff at startup (mods etc)
     QString loadData();
@@ -72,7 +72,7 @@ public slots:
 
 signals:
     void modListDownloader_isReady();
-    void installerReady(QString);
+    void installerReady(QString msg);
 
 private:
     ModListDownloader *d;
