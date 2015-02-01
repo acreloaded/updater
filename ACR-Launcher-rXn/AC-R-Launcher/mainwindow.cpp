@@ -54,8 +54,9 @@ void MainWindow::on_list_aviable_mods_itemDoubleClicked(QListWidgetItem *item)
     ModInstallDialog md(mw->getModInfos(item->text()));
     md.exec();
     if(md.result() != 0) {
-       QMessageBox::information(this, "ACR Launcher", mw->installMod(item->text()), QMessageBox::Ok);
-       connect(mw, SIGNAL(installerReady(QString)), this, SLOT(on_MainWorker_installerReady(QString)));
+        connect(mw, SIGNAL(installerReady(QString)), this, SLOT(on_MainWorker_installerReady(QString)));
+        QMessageBox::information(this, "ACR Launcher", mw->installMod(item->text()), QMessageBox::Ok);
+
     }
 }
 

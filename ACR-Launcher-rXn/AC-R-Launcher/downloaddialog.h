@@ -31,6 +31,8 @@ private slots:
 
     void handleProgress(qint64 rec, qint64 total);
 
+    void handleError(QNetworkReply::NetworkError error);
+
 signals:
     void downloadReady(QByteArray data);
 
@@ -40,7 +42,6 @@ private:
     QNetworkAccessManager *qna;
     QNetworkRequest *qnreq;
     QNetworkReply *result;
-    QString text;
 };
 
 #endif // DOWNLOADDIALOG_H
