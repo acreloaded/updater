@@ -247,7 +247,7 @@ QString MainWorker::runClient() {
 QString MainWorker::runServer(bool new_window) {
     QString ret_val = writeServerExecutable();
     if(new_window) {
-        ServerConsole *sc = new ServerConsole(0, ret_val);
+        ServerConsole *sc = new ServerConsole(0, ret_val); // FIXME needs delete
         sc->show();
         return ret_val;
     }

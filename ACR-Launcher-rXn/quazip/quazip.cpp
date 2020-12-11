@@ -317,7 +317,6 @@ bool QuaZip::open(Mode mode, zlib_filefunc_def* ioApi)
       if (!p->zipName.isEmpty())
         delete ioDevice;
       return false;
-      break;
   }
 }
 
