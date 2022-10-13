@@ -159,7 +159,26 @@ def updateACR(arguments):
 				shutil.copyfileobj(response, open(os.path.join(os.getcwd(),'acr.tar.gz'), 'wb'))
 				print('Extracting ACR')
 				with tarfile.open(os.path.join(os.getcwd(),'acr.tar.gz'),'r') as temp:
-					temp.extractall(os.path.join(os.getcwd(),'tmp'))
+	def is_within_directory(directory, target):
+		
+		abs_directory = os.path.abspath(directory)
+		abs_target = os.path.abspath(target)
+	
+		prefix = os.path.commonprefix([abs_directory, abs_target])
+		
+		return prefix == abs_directory
+	
+	def safe_extract(tar, path=".", members=None, *, numeric_owner=False):
+	
+		for member in tar.getmembers():
+			member_path = os.path.join(path, member.name)
+			if not is_within_directory(path, member_path):
+				raise Exception("Attempted Path Traversal in Tar File")
+	
+		tar.extractall(path, members, numeric_owner=numeric_owner) 
+		
+	
+	safe_extract(temp, os.path.join(os.getcwd(),"tmp"))
 				os.remove(os.path.join(os.getcwd(),'acr.tar.gz'))
 				if savedData['version'] == '0':
 					print('Moving Files')
