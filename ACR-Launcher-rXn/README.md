@@ -1,5 +1,4 @@
-updater-qt
-==========
+# updater-qt
 
 My (next ;) try for an updater an mod system, this time mainly porting ruler501's python script to C++/Qt
 

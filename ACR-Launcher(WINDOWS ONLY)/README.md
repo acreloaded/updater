@@ -1,5 +1,4 @@
-ACR-Launcher
-============
+# ACR-Launcher
 
 A auto updater/launcher for ACR. :)
 Currently only supports windows. 
